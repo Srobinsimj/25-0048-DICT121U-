@@ -1,121 +1,243 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Official Team Website</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+<title>Game Day District #9</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            background-color: #0b1f16;
-            color: white;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-        /* HERO SECTION */
-        .hero {
-            height: 100vh;
-            background: 
-                linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-                url('team.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
-        .hero h1 {
-            font-size: 50px;
-            color: #ffd700;
-        }
+body{
+background:linear-gradient(135deg,#04130d,#0b1f16,#000);
+color:white;
+scroll-behavior:smooth;
+}
 
-        .hero p {
-            margin-top: 15px;
-            font-size: 20px;
-        }
+/* NAVBAR */
+nav{
+position:fixed;
+width:100%;
+background:rgba(0,0,0,0.7);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+z-index:1000;
+}
 
-        .btn {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 12px 25px;
-            background-color: #ffd700;
-            color: black;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
+nav h2{color:#ffd700;}
 
-        .btn:hover {
-            background-color: white;
-        }
+nav ul{
+list-style:none;
+display:flex;
+gap:25px;
+}
 
-        /* TEAM SECTION */
-        .team-section {
-            padding: 60px 20px;
-            text-align: center;
-        }
+nav a{
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:.3s;
+}
 
-        .team-section h2 {
-            font-size: 35px;
-            margin-bottom: 30px;
-            color: #ffd700;
-        }
+nav a:hover{color:#ffd700;}
 
-        .team-section img {
-            width: 80%;
-            max-width: 900px;
-            border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-        }
+.menu-btn{display:none;font-size:25px;cursor:pointer;}
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #06140f;
-            margin-top: 50px;
-        }
+/* HERO */
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)),
+url('team.jpg') center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
 
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 30px;
-            }
+.hero h1{
+font-size:55px;
+color:#ffd700;
+}
 
-            .hero p {
-                font-size: 16px;
-            }
-        }
+.hero p{margin-top:15px;}
 
-    </style>
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:14px 30px;
+background:#ffd700;
+color:black;
+border-radius:6px;
+font-weight:bold;
+text-decoration:none;
+}
+
+/* SECTIONS */
+section{padding:80px 20px;text-align:center;}
+
+h2{color:#ffd700;margin-bottom:30px;}
+
+/* PLAYERS */
+.players{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+max-width:1100px;
+margin:auto;
+}
+
+.card{
+background:#06140f;
+padding:20px;
+border-radius:10px;
+transition:.3s;
+}
+
+.card:hover{transform:translateY(-5px);}
+
+.card img{
+width:100%;
+border-radius:8px;
+margin-bottom:10px;
+}
+
+/* FIXTURES */
+.fixture-box{
+max-width:900px;
+margin:auto;
+background:#06140f;
+padding:25px;
+border-radius:10px;
+}
+
+.fixture{
+display:flex;
+justify-content:space-between;
+border-bottom:1px solid #222;
+padding:12px 0;
+}
+
+/* SOCIAL */
+.social a{
+margin:10px;
+font-size:20px;
+color:white;
+text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+background:#000;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+nav ul{display:none;flex-direction:column;background:#000;position:absolute;top:60px;right:0;padding:20px;}
+.menu-btn{display:block;}
+}
+</style>
 </head>
 
 <body>
 
-    <!-- HERO SECTION -->
-    <div class="hero">
-        <div>
-            <h1>Official Team Website</h1>
-            <p>Passion • Strength • Victory</p>
-            <a href="#team" class="btn">View Team</a>
-        </div>
-    </div>
+<!-- NAV -->
+<nav>
+<h2>District #9</h2>
+<span class="menu-btn" onclick="toggleMenu()">☰</span>
+<ul id="menu">
+<li><a href="#">Home</a></li>
+<li><a href="#players">Players</a></li>
+<li><a href="#fixtures">Fixtures</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
 
-    <!-- TEAM SECTION -->
-    <section class="team-section" id="team">
-        <h2>Our Team</h2>
-        <img src="team.jpg" alt="Team Photo">
-    </section>
+<!-- HERO -->
+<section class="hero">
+<div>
+<h1>Game Day District #9</h1>
+<p>Passion • Strength • Victory</p>
+<a href="#players" class="btn">Meet The Team</a>
+</div>
+</section>
 
-    <footer>
-        © 2026 Official Team Website | Designed by Moses D Johnson
-    </footer>
+<!-- PLAYERS -->
+<section id="players">
+<h2>Our Players</h2>
+
+<div class="players">
+<div class="card">
+<img src="player1.jpg">
+<h3>Player One</h3>
+<p>Forward</p>
+</div>
+
+<div class="card">
+<img src="player2.jpg">
+<h3>Player Two</h3>
+<p>Midfielder</p>
+</div>
+
+<div class="card">
+<img src="player3.jpg">
+<h3>Player Three</h3>
+<p>Defender</p>
+</div>
+</div>
+</section>
+
+<!-- FIXTURES -->
+<section id="fixtures">
+<h2>Fixtures</h2>
+
+<div class="fixture-box">
+<div class="fixture">
+<span>District #9 vs Lions</span>
+<span>March 5</span>
+</div>
+
+<div class="fixture">
+<span>District #9 vs Warriors</span>
+<span>March 12</span>
+</div>
+
+<div class="fixture">
+<span>District #9 vs Kings</span>
+<span>March 20</span>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact</h2>
+<p>Email: gamedaydistrict9@email.com</p>
+<p>Follow us on social media</p>
+
+<div class="social">
+<a href="#">Instagram</a>
+<a href="#">Facebook</a>
+<a href="#">Twitter</a>
+</div>
+</section>
+
+<footer>
+© 2026 Game Day District #9 | Designed by Moses D Johnson
+</footer>
+
+<script>
+function toggleMenu(){
+var menu=document.getElementById("menu");
+menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+}
+</script>
 
 </body>
 </html>
