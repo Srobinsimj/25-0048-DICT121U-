@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liberia First Division League</title>
+
+<style>
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#0b1727;
+color:white;
+transition:0.3s;
+}
+
+header{
+background:linear-gradient(90deg,#002868,#bf0a30);
+padding:20px;
+text-align:center;
+}
+
+nav{
+background:#111;
+text-align:center;
+padding:10px;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{color:gold;}
+
+section{padding:30px;}
+
+h2{color:gold;}
+
+.card{
+background:#16263d;
+padding:20px;
+margin:15px 0;
+border-radius:10px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+border:1px solid #333;
+padding:10px;
+text-align:center;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:15px;
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+}
+
+button{
+position:fixed;
+top:10px;
+right:10px;
+background:gold;
+border:none;
+padding:10px;
+cursor:pointer;
+font-weight:bold;
+}
+
+footer{
+text-align:center;
+background:#000;
+padding:15px;
+}
+</style>
+</head>
+
+<body>
+
+<button onclick="toggleMode()">Dark / Light</button>
+
+<header>
+<h1>Liberia First Division League</h1>
+<p>Organised by the Liberia Football Association</p>
+</header>
+
+<nav>
+<a href="#history">History</a>
+<a href="#teams">Teams</a>
+<a href="#standings">Standings</a>
+<a href="#gallery">Players</a>
+<a href="#videos">Highlights</a>
+</nav>
+
+<section id="history">
+<h2>League History</h2>
+<div class="card">
+<p>
+The Liberia First Division League is the top football competition in Liberia. It is managed by the 
+[Liberia Football Association](chatgpt://generic-entity?number=1) and has helped develop many talented players.
+</p>
+
+<p>
+Legendary clubs such as [Invincible Eleven](chatgpt://generic-entity?number=2) and 
+[Mighty Barrolle](chatgpt://generic-entity?number=3) dominated early years, while modern teams like 
+[LISCR FC](chatgpt://generic-entity?number=4) and 
+[Barrack Young Controllers](chatgpt://generic-entity?number=5) are leading today.
+</p>
+
+<p>
+The league produced global stars including [George Weah](chatgpt://generic-entity?number=6), the only African Ballon d’Or winner.
+</p>
+</div>
+</section>
+
+<section id="teams">
+<h2>Division One Clubs</h2>
+<div class="card">
+<ul>
+<li>Barrack Young Controllers</li>
+<li>LISCR FC</li>
+<li>Heaven Eleven</li>
+<li>Watanga FC</li>
+<li>Bea Mountain</li>
+<li>Invincible Eleven</li>
+<li>Mighty Barrolle</li>
+<li>Freeport FC</li>
+<li>Nimba Kwado</li>
+<li>Paynesville FC</li>
+</ul>
+</div>
+</section>
+
+<section id="standings">
+<h2>Current Table</h2>
+<div class="card">
+<table>
+<tr>
+<th>Position</th>
+<th>Club</th>
+<th>Points</th>
+</tr>
+<tr><td>1</td><td>Barrack Young Controllers</td><td>40</td></tr>
+<tr><td>2</td><td>LISCR FC</td><td>38</td></tr>
+<tr><td>3</td><td>Watanga FC</td><td>35</td></tr>
+<tr><td>4</td><td>Heaven Eleven</td><td>32</td></tr>
+</table>
+</div>
+</section>
+
+<section id="gallery">
+<h2>Liberian Football Stars</h2>
+<div class="gallery">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/George_Weah_2014.jpg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Anthony_Laffor.jpg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/William_Jebor.jpg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Kpah_Sherman.jpg">
+</div>
+</section>
+
+<section id="videos">
+<h2>Match Highlights</h2>
+<div class="card">
+<p>Recent football highlights and African club competitions.</p>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Liberia First Division</p>
+</footer>
+
+<script>
+function toggleMode(){
+if(document.body.style.background==="white"){
+document.body.style.background="#0b1727";
+document.body.style.color="white";
+}else{
+document.body.style.background="white";
+document.body.style.color="black";
+}
+}
+</script>
+
+</body>
+</html>
