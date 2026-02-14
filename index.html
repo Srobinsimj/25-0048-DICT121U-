@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liberian First Division League</title>
+<style>
+/* General Styles */
+body {
+  margin:0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg,#061c3d,#010b18);
+  color: white;
+  transition: 0.5s;
+}
+header{
+  text-align:center;
+  padding:30px 20px;
+  background: linear-gradient(90deg,#002868,#bf0a30);
+}
+header h1{margin:0;font-size:2.2em;}
+header p{margin:5px;font-size:1.1em;color:#ffd700;}
+nav{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  background:#0c2c63;
+  padding:10px;
+}
+nav a{
+  color:white;
+  margin:10px 15px;
+  text-decoration:none;
+  font-weight:bold;
+}
+nav a:hover{color:gold;}
+section{padding:30px;}
+h2{color:gold;margin-bottom:15px;}
+.card{
+  background:#102d5c;
+  padding:20px;
+  margin:20px 0;
+  border-radius:10px;
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+th,td{
+  border:1px solid #fff;
+  padding:10px;
+  text-align:center;
+}
+th{background:#0c3c7c;}
+tr:nth-child(even){background:#0a294a;}
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:15px;
+}
+.gallery img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  border-radius:10px;
+  border:2px solid gold;
+}
+.video{
+  margin:20px 0;
+  text-align:center;
+}
+button#mode{
+  position:fixed;
+  top:15px;
+  right:15px;
+  padding:10px 15px;
+  background:gold;
+  border:none;
+  font-weight:bold;
+  cursor:pointer;
+  border-radius:5px;
+}
+footer{
+  background:#01142e;
+  padding:20px;
+  text-align:center;
+  color:#ffd700;
+  margin-top:30px;
+}
+</style>
+</head>
+<body>
+
+<button id="mode" onclick="toggleMode()">Dark / Light</button>
+
+<header>
+<h1>Liberian First Division League</h1>
+<p>Official Liberia Football Association Fan Site</p>
+</header>
+
+<nav>
+<a href="#history">History</a>
+<a href="#table">League Table</a>
+<a href="#gallery">Players</a>
+<a href="#videos">Highlights</a>
+</nav>
+
+<!-- History -->
+<section id="history">
+<h2>League History</h2>
+<div class="card">
+<p>The Liberian First Division is the top professional football league in Liberia, founded in 1956 and run by the Liberia Football Association. Famous clubs like <strong>Invincible Eleven</strong>, <strong>Mighty Barrolle</strong>, and <strong>LISCR FC</strong> have shaped the league's history. Liberia has produced international stars including <strong>George Weah</strong>, Africa’s only Ballon d’Or winner.</p>
+<p>The league uses modern stadiums, youth development, and competitive football. Top teams qualify for CAF competitions such as the <strong>CAF Champions League</strong> and <strong>CAF Confederation Cup</strong>.</p>
+</div>
+</section>
+
+<!-- League Table -->
+<section id="table">
+<h2>Current League Table</h2>
+<div class="card">
+<table id="leagueTable">
+<thead>
+<tr>
+<th>Pos</th>
+<th>Team</th>
+<th>P</th>
+<th>W</th>
+<th>D</th>
+<th>L</th>
+<th>GF</th>
+<th>GA</th>
+<th>GD</th>
+<th>Pts</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+</div>
+</section>
+
+<!-- Gallery -->
+<section id="gallery">
+<h2>Liberian Football Stars</h2>
+<div class="gallery">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/George_Weah_2014.jpg" alt="George Weah">
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Anthony_Laffor.jpg" alt="Anthony Laffor">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/William_Jebor.jpg" alt="William Jebor">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Kpah_Sherman.jpg" alt="Kpah Sherman">
+</div>
+</section>
+
+<!-- Video Highlights -->
+<section id="videos">
+<h2>Match Highlights</h2>
+<div class="video">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xZyyJhZwhHQ" title="Liberia vs South Africa Highlights" allowfullscreen></iframe>
+</div>
+<div class="video">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tcDiyb36qB0" title="Liberia vs Morocco Highlights" allowfullscreen></iframe>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Liberian First Division League | Designed for High-End Professional Look</p>
+</footer>
+
+<script>
+// Dark/Light Mode
+function toggleMode(){
+  if(document.body.style.background==="white"){
+    document.body.style.background="linear-gradient(135deg,#061c3d,#010b18)";
+    document.body.style.color="white";
+  }else{
+    document.body.style.background="white";
+    document.body.style.color="black";
+  }
+}
+
+// Teams for simulation
+const teams = [
+  {name:"LISCR FC"}, {name:"Watanga FC"}, {name:"Heaven Eleven"}, {name:"Freeport FC"},
+  {name:"Mighty Barrolle"}, {name:"Invincible Eleven"}, {name:"Nimba Kwado"},
+  {name:"Global Pharma"}, {name:"Sandi FC"}, {name:"Bea Mountain"}
+];
+
+// Initialize stats
+teams.forEach(team=>{
+  team.P=0; team.W=0; team.D=0; team.L=0;
+  team.GF=0; team.GA=0; team.GD=0; team.Pts=0;
+});
+
+// Double Round-Robin Simulation
+for(let i=0;i<teams.length;i++){
+  for(let j=0;j<teams.length;j++){
+    if(i!==j){
+      // simulate home and away
+      [i,j].forEach((x,index)=>{
+        const home=i; const away=j;
+        const homeGoals=Math.floor(Math.random()*5);
+        const awayGoals=Math.floor(Math.random()*5);
+        // update played
+        teams[home].P++; teams[away].P++;
+        // update goals
+        teams[home].GF+=homeGoals; teams[home].GA+=awayGoals;
+        teams[away].GF+=awayGoals; teams[away].GA+=homeGoals;
+        teams[home].GD=teams[home].GF-teams[home].GA;
+        teams[away].GD=teams[away].GF-teams[away].GA;
+        // update results
+        if(homeGoals>awayGoals){teams[home].W++; teams[home].Pts+=3; teams[away].L++;}
+        else if(homeGoals<awayGoals){teams[away].W++; teams[away].Pts+=3; teams[home].L++;}
+        else{teams[home].D++; teams[home].Pts+=1; teams[away].D++; teams[away].Pts+=1;}
+      });
+    }
+  }
+}
+
+// Sort by Points, GD, GF
+teams.sort((a,b)=>{
+  if(b.Pts!==a.Pts) return b.Pts-a.Pts;
+  else if(b.GD!==a.GD) return b.GD-a.GD;
+  else return b.GF-a.GF;
+});
+
+// Populate Table
+const tbody = document.querySelector("#leagueTable tbody");
+teams.forEach((t,i)=>{
+  const row = document.createElement("tr");
+  row.innerHTML=`<td>${i+1}</td><td>${t.name}</td><td>${t.P}</td><td>${t.W}</td><td>${t.D}</td><td>${t.L}</td><td>${t.GF}</td><td>${t.GA}</td><td>${t.GD}</td><td>${t.Pts}</td>`;
+  tbody.appendChild(row);
+});
+</script>
+</body>
+</html>
