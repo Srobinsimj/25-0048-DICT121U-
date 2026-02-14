@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LIB Soccer</title>
+
+<style>
+:root{
+--red:#bf0a30;
+--blue:#002868;
+--gold:#ffd700;
+--light:#f5f7fa;
+--dark:#121212;
+}
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:var(--light);
+transition:0.3s;
+}
+
+.dark{
+background:var(--dark);
+color:white;
+}
+
+nav{
+background:var(--red);
+color:white;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:20px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+.hero{
+background:url("https://via.placeholder.com/1200x400?text=Liberia+Football") center/cover;
+color:white;
+text-align:center;
+padding:80px 20px;
+}
+
+.section{
+padding:30px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+border-radius:8px;
+overflow:hidden;
+transition:0.3s;
+}
+
+.dark .card{
+background:#1e1e1e;
+}
+
+.card img{
+width:100%;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+border:1px solid #ddd;
+padding:10px;
+}
+
+th{
+background:var(--blue);
+color:white;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+}
+
+.gallery img{
+width:100%;
+border-radius:8px;
+}
+
+form{
+max-width:500px;
+margin:auto;
+background:white;
+padding:20px;
+}
+
+.dark form{
+background:#1e1e1e;
+}
+
+button{
+background:var(--blue);
+color:white;
+border:none;
+padding:10px 15px;
+cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<h2>LIB Soccer</h2>
+<ul>
+<li><a href="#news">News</a></li>
+<li><a href="#fixtures">Fixtures</a></li>
+<li><a href="#standings">Standings</a></li>
+<li><a href="#players">Players</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#fans">Fans</a></li>
+</ul>
+
+<button onclick="darkMode()">Dark Mode</button>
+</nav>
+
+<section class="hero">
+<h1>Liberia Football Hub</h1>
+<p>Division One & Two | Fixtures | Results | Players</p>
+</section>
+
+<!-- NEWS -->
+<section id="news" class="section">
+<h2>Latest Liberia Football News</h2>
+<div class="cards">
+<div class="card">
+<img src="https://via.placeholder.com/300x200">
+<p>LISCR FC wins major league match.</p>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300x200">
+<p>Watanga signs new striker.</p>
+</div>
+</div>
+</section>
+
+<!-- FIXTURES -->
+<section id="fixtures" class="section">
+<h2>Fixtures & Results</h2>
+<table>
+<tr><th>Date</th><th>Match</th><th>Result</th></tr>
+<tr><td>Mar 2</td><td>LISCR vs Watanga</td><td>2-1</td></tr>
+<tr><td>Mar 5</td><td>Heaven Eleven vs Barrolle</td><td>Upcoming</td></tr>
+</table>
+</section>
+
+<!-- STANDINGS -->
+<section id="standings" class="section">
+<h2>Division One Standings</h2>
+<table>
+<tr><th>Pos</th><th>Team</th><th>Pts</th></tr>
+<tr><td>1</td><td>LISCR</td><td>45</td></tr>
+<tr><td>2</td><td>Watanga</td><td>42</td></tr>
+<tr><td>3</td><td>Heaven Eleven</td><td>39</td></tr>
+</table>
+</section>
+
+<!-- TOP SCORERS -->
+<section class="section">
+<h2>Top Scorers</h2>
+<table>
+<tr><th>Player</th><th>Team</th><th>Goals</th></tr>
+<tr><td>Player A</td><td>LISCR</td><td>15</td></tr>
+<tr><td>Player B</td><td>Watanga</td><td>12</td></tr>
+</table>
+</section>
+
+<!-- PLAYERS -->
+<section id="players" class="section">
+<h2>Legend Spotlight</h2>
+<div class="cards">
+<div class="card">
+<img src="https://via.placeholder.com/200">
+<p>George Weah – Liberia’s greatest footballer.</p>
+</div>
+</div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="section">
+<h2>Match Gallery</h2>
+<div class="gallery">
+<img src="https://via.placeholder.com/200">
+<img src="https://via.placeholder.com/200">
+<img src="https://via.placeholder.com/200">
+</div>
+</section>
+
+<!-- FAN REGISTRATION -->
+<section id="fans" class="section">
+<h2>Join LIB Soccer Fans</h2>
+<form>
+<label>Name</label><br>
+<input type="text" style="width:100%"><br><br>
+<label>Email</label><br>
+<input type="email" style="width:100%"><br><br>
+<button>Register</button>
+</form>
+</section>
+
+<script>
+function darkMode(){
+document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>
